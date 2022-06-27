@@ -1,5 +1,10 @@
 ![VIM](https://dnp4pehkvoo6n.cloudfront.net/43c5af597bd5c1a64eb1829f011c208f/as/Ultimate%20Vimrc.svg)
 
+# TODO
+
+- 获取子模块的插件命令: `git submodule update --init --recursive`
+- 更新readme
+
 # The Ultimate vimrc
 
 Over the last 10 years, I have used and tweaked Vim. This configuration is the ultimate vimrc (or at least my version of it).
