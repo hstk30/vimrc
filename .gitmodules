@@ -1,0 +1,12 @@
+[submodule "my_plugins/vim-gutentags"]
+	path = my_plugins/vim-gutentags
+	url = git@github.com:ludovicchabant/vim-gutentags.git
+[submodule "my_plugins/LeaderF"]
+	path = LeaderF
+	url = git@github.com:Yggdroot/LeaderF.git
+[submodule "my_plugins/bufferhint"]
+	path = bufferhint
+	url = git@github.com:bsdelf/bufferhint.git
+[submodule "my_plugins/tagbar"]
+	path = tagbar
+	url = git@github.com:preservim/tagbar.git
