@@ -33,7 +33,17 @@ let g:gutentags_cache_dir = s:vim_tags
 let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
 let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
 let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
-let g:gutentags_ctags_extra_args += ['--exclude=.git', '--exclude=BUILD', '--exclude=.svn', '--exclude=*.js', '--exclude=vendor/*', '--exclude=node_modules/*', '--exclude=db/*', '--exclude=log/*', '--exclude=\*.min.\*', '--exclude=\*.swp', '--exclude=\*.bak', '--exclude=\*.pyc', '--exclude=\*.class', '--exclude=\*.sln', '--exclude=\*.csproj', '--exclude=\*.csproj.user', '--exclude=\*.cache', '--exclude=\*.dll', '--exclude=\*.pdb', '--exclude=target', '--exclude=.idea', '--exclude=\*.md', '--exclude=\*.markdown', '--exclude=doc/*', '--exclude=docs/*', '--exclude=bin/*', '--exclude=ide/*']
+let g:gutentags_ctags_extra_args += [
+            \ '--exclude=.git', '--exclude=BUILD', '--exclude=.svn', 
+            \ '--exclude=*.js', '--exclude=vendor/*', '--exclude=node_modules/*', 
+            \ '--exclude=db/*', '--exclude=log/*', '--exclude=\*.min.\*', 
+            \ '--exclude=\*.swp', '--exclude=\*.bak', '--exclude=\*.pyc', 
+            \ '--exclude=\*.class', '--exclude=\*.sln', '--exclude=\*.csproj', 
+            \ '--exclude=\*.csproj.user', '--exclude=\*.cache', '--exclude=\*.dll', 
+            \ '--exclude=\*.pdb', '--exclude=target', '--exclude=.idea', 
+            \ '--exclude=\*.md', '--exclude=\*.markdown', '--exclude=doc/*', 
+            \ '--exclude=docs/*', '--exclude=bin/*', '--exclude=ide/*'
+            \ ]
 
 " Jump back up in the tag stack
 nmap g[ <c-t> 
@@ -41,6 +51,7 @@ nmap g[ <c-t>
 " => LeaderF
 "  " don't show the help in normal mode
 set modelines=1
+let g:Lf_ShowDevIcons = 0
 let g:Lf_HideHelp = 1
 let g:Lf_UseCache = 0
 let g:Lf_UseVersionControlTool = 0
