@@ -49,7 +49,7 @@ let g:gutentags_ctags_extra_args += [
 nmap g[ <c-t> 
 
 " => LeaderF
-"  " don't show the help in normal mode
+" don't show the help in normal mode
 set modelines=1
 let g:Lf_ShowDevIcons = 0
 let g:Lf_HideHelp = 1
@@ -73,4 +73,20 @@ let g:Lf_WildIgnore = {
        \ 'dir': ['.svn','.git','.hg','venv','.vscode','.SpaceVim.d', 'target', 'log', 'vendor'],
        \ 'file': ['*.sw?','~$*','*.bak','*.exe','*.o','*.so','*.py[co]']
        \}
+
+
+" => cscope
+" nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
+nnoremap <leader>l :call ToggleLocationList()<CR>
+" s: Find this C symbol
+nnoremap  <leader>fs :call CscopeFind('s', expand('<cword>'))<CR>
+" g: Find this definition
+nnoremap  <leader>fg :call CscopeFind('g', expand('<cword>'))<CR>
+" d: Find functions called by this function
+nnoremap  <leader>fd :call CscopeFind('d', expand('<cword>'))<CR>
+" c: Find functions calling this function
+nnoremap  <leader>fc :call CscopeFind('c', expand('<cword>'))<CR>
+" i: Find files #including this file
+nnoremap  <leader>fi :call CscopeFind('i', expand('<cword>'))<CR>
+
 

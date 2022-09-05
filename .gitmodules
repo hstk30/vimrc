@@ -10,3 +10,6 @@
 [submodule "my_plugins/bufferhint"]
 	path = my_plugins/bufferhint
 	url = git@github.com:bsdelf/bufferhint.git
+[submodule "my_plugins/cscope.vim"]
+	path = my_plugins/cscope.vim
+	url = git@github.com:brookhong/cscope.vim.git
