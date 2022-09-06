@@ -123,6 +123,12 @@ let g:ale_linters = {
 \   'c': ['cc']
 \}
 
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'c': ['clang-format'],
+\   'python': ['autopep8'],
+\}
+
 nmap <silent> <leader>a <Plug>(ale_next_wrap)
 
 " Disabling highlighting

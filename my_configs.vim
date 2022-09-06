@@ -76,6 +76,7 @@ let g:Lf_WildIgnore = {
 
 
 " => cscope
+let g:cscope_silent = 1
 " nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
 nnoremap <leader>l :call ToggleLocationList()<CR>
 " s: Find this C symbol
