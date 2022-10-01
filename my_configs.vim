@@ -4,10 +4,6 @@ vnoremap <leader>y "+y
 " 设置快捷键将系统剪贴板内容粘贴至vim, 直接使用系统快捷键
 " nmap <leader>p "+p
 
-" => bufferhint plugin
-nnoremap - :call bufferhint#Popup()<cr>
-nnoremap \ :call bufferhint#LoadPrevious()<cr>
-
 " => tagbar plugin
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_ctags_bin = '/opt/homebrew/bin/ctags'
@@ -77,7 +73,7 @@ let g:Lf_WildIgnore = {
 
 " => cscope
 let g:cscope_silent = 1
-" nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
+nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
 nnoremap <leader>l :call ToggleLocationList()<CR>
 " s: Find this C symbol
 nnoremap  <leader>fs :call CscopeFind('s', expand('<cword>'))<CR>
@@ -89,5 +85,11 @@ nnoremap  <leader>fd :call CscopeFind('d', expand('<cword>'))<CR>
 nnoremap  <leader>fc :call CscopeFind('c', expand('<cword>'))<CR>
 " i: Find files #including this file
 nnoremap  <leader>fi :call CscopeFind('i', expand('<cword>'))<CR>
+
+" => Asyncrun
+
+" 自动打开 quickfix window ，高度为 6
+let g:asyncrun_open = 6
+map <leader>r :AsyncRun 
 
 

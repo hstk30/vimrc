@@ -5,6 +5,27 @@
 - 获取子模块的插件命令: `git submodule update --init --recursive`
 - 更新readme
 
+# 一些折腾
+
+本来想说是一些改进的，但是我自己引入的一些插件都或多或少有些问题，需要注意下。
+
+## 依赖
+
+- `Universal Ctags`，插件`tagbar` 和`vim-gutentags` 需要
+- `cscope`，插件`cscope.vim` 需要 
+
+## 正改进
+
+- 引进[LeaderF](https://github.com/Yggdroot/LeaderF)，替换了原来的[bufexplorer.zip](https://github.com/vim-scripts/bufexplorer.zip) 和
+    [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim) 这两个老家伙。
+
+## 现存的问题
+
+- `cscope.vim` 工作的很差，经常花屏，`tab` 页出错，但是`go to usage` 对我来说还是挺需要
+
+先用着看看吧，自己配置`vim` 的这些折腾在我看来有点本末倒置了。不少插件都是上了年纪的，也不维护了，就很烦。
+我还不怎么想自己来搞插件。
+
 # The Ultimate vimrc
 
 Over the last 10 years, I have used and tweaked Vim. This configuration is the ultimate vimrc (or at least my version of it).
