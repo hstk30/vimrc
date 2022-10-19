@@ -5,6 +5,14 @@
 - 获取子模块的插件命令: `git submodule update --init --recursive`
 - 更新readme
 
+# <leader>
+
+本来用的`leader` 是`,` ， 看了这个
+[vim-init issue22](https://github.com/skywind3000/vim-init/issues/22)
+后换成了`<Space>` 。不过`,` 确实比`<Space>` 要舒服一点，而且官方文档在介绍`mapleader` 
+的时候用的例子也是`,` 。`<Space>` 设为`leader` 还有一个注意点就是：
+你完全不能使用`leader` 进行插入模式的键映射。
+
 # 一些折腾
 
 本来想说是一些改进的，但是我自己引入的一些插件都或多或少有些问题，需要注意下。
