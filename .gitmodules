@@ -7,9 +7,9 @@
 [submodule "my_plugins/LeaderF"]
 	path = my_plugins/LeaderF
 	url = git@github.com:Yggdroot/LeaderF.git
-[submodule "my_plugins/cscope.vim"]
-	path = my_plugins/cscope.vim
-	url = git@github.com:brookhong/cscope.vim.git
 [submodule "my_plugins/asyncrun.vim"]
 	path = my_plugins/asyncrun.vim
 	url = git@github.com:skywind3000/asyncrun.vim.git
+[submodule "my_plugins/YouCompleteMe"]
+	path = my_plugins/YouCompleteMe
+	url = git@github.com:ycm-core/YouCompleteMe.git

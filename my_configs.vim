@@ -3,7 +3,7 @@ vnoremap <leader>y "+y
 " 设置快捷键将系统剪贴板内容粘贴至vim, 直接使用系统快捷键
 " nmap <leader>p "+p
 
-" => tagbar plugin
+" => tagbar 
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_ctags_bin = '/opt/homebrew/bin/ctags'
 
@@ -51,7 +51,7 @@ let g:Lf_HideHelp = 1
 let g:Lf_UseCache = 0
 let g:Lf_UseVersionControlTool = 0
 let g:Lf_IgnoreCurrentBufferName = 1
-" popup mode
+" popup mode need `vim8+`
 let g:Lf_WindowPosition = 'popup'
 let g:Lf_PreviewInPopup = 1
 let g:Lf_StlSeparator = { 'left': "\ue0b0", 'right': "\ue0b2", 'font': "DejaVu Sans Mono for Powerline" }
@@ -69,28 +69,10 @@ let g:Lf_WildIgnore = {
        \ 'file': ['*.sw?','~$*','*.bak','*.exe','*.o','*.so','*.py[co]']
        \}
 
-
-" => cscope
-let g:cscope_silent = 1
-nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
-nnoremap <leader>l :call ToggleLocationList()<CR>
-" s: Find this C symbol
-nnoremap  <leader>fs :call CscopeFind('s', expand('<cword>'))<CR>
-" g: Find this definition
-nnoremap  <leader>fg :call CscopeFind('g', expand('<cword>'))<CR>
-" d: Find functions called by this function
-nnoremap  <leader>fd :call CscopeFind('d', expand('<cword>'))<CR>
-" c: Find functions calling this function
-nnoremap  <leader>fc :call CscopeFind('c', expand('<cword>'))<CR>
-" i: Find files #including this file
-nnoremap  <leader>fi :call CscopeFind('i', expand('<cword>'))<CR>
-
 " => Asyncrun
-
 " 自动打开 quickfix window ，高度为 6
 let g:asyncrun_open = 6
 map <leader>r :AsyncRun 
-
 
 "----------------------------------------------------------------------
 " <leader>+数字键 切换tab
@@ -127,3 +109,40 @@ set wildignore+=*.ppt,*.pptx,*.docx,*.xlt,*.xls,*.xlsx,*.odt,*.wps
 set wildignore+=*.msi,*.crx,*.deb,*.vfd,*.apk,*.ipa,*.bin,*.msu
 set wildignore+=*.gba,*.sfc,*.078,*.nds,*.smd,*.smc
 set wildignore+=*.linux2,*.win32,*.darwin,*.freebsd,*.linux,*.android
+
+" YouCompleteMe
+let g:ycm_add_preview_to_completeopt = 0
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_server_log_level = 'info'
+let g:ycm_min_num_identifier_candidate_chars = 2
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
+let g:ycm_complete_in_strings=1
+let g:ycm_key_invoke_completion = '<c-z>'
+set completeopt=menu,menuone
+nmap <leader>fw <Plug>(YCMFindSymbolInWorkspace)
+nmap <leader>fd <Plug>(YCMFindSymbolInDocument)
+
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
+nnoremap <leader>jr :YcmCompleter GoToReferences<CR>
+nnoremap <leader>ji :YcmCompleter GoToImplementation<CR>
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
+nnoremap <leader>jcr :YcmCompleter GoToCallers<CR>
+nnoremap <leader>jce :YcmCompleter GoToCallees<CR>
+
+nnoremap <leader>kd :YcmCompleter GetDoc<CR>
+
+noremap <c-z> <NOP>
+
+let g:ycm_semantic_triggers =  {
+			\ 'c,cpp,python,java,go,erlang,perl': ['re!\w{3}'],
+			\ 'cs,lua,javascript': ['re!\w{3}'],
+			\ }
+
+let g:ycm_filetype_whitelist = {
+			\ "c":1,
+			\ "cpp":1,
+			\ "python":1,
+			\ "sh":1,
+			\ "zsh":1,
+			\ }
+

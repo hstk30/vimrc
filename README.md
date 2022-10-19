@@ -12,19 +12,16 @@
 ## 依赖
 
 - `Universal Ctags`，插件`tagbar` 和`vim-gutentags` 需要
-- `cscope`，插件`cscope.vim` 需要 
 
 ## 正改进
 
 - 引进[LeaderF](https://github.com/Yggdroot/LeaderF)，替换了原来的[bufexplorer.zip](https://github.com/vim-scripts/bufexplorer.zip) 和
     [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim) 这两个老家伙。
 
-## 现存的问题
+# 改进
 
-- `cscope.vim` 工作的很差，经常花屏，`tab` 页出错，但是`go to usage` 对我来说还是挺需要
-
-先用着看看吧，自己配置`vim` 的这些折腾在我看来有点本末倒置了。不少插件都是上了年纪的，也不维护了，就很烦。
-我还不怎么想自己来搞插件。
+- 终于去掉了`cscope`，换上了[YouCompleteMe](https://github.com/ycm-core/YouCompleteMe)，但是`YCM` 安装起来比较麻烦，
+    不适合所有人，和一些老环境，所以不行就把`my_config` 里相关的配置去掉。
 
 # The Ultimate vimrc
 
