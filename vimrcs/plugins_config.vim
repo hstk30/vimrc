@@ -111,7 +111,7 @@ let g:lightline = {
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ale_linters = {
 \   'python': ['flake8'],
-\   'c': ['cc']
+\   'c': ['clang']
 \}
 
 let g:ale_fixers = {
@@ -120,6 +120,7 @@ let g:ale_fixers = {
 \   'python': ['autopep8'],
 \}
 
+let g:ale_c_gcc_options = '-Wall -std=c89'
 nmap <silent> <leader>a <Plug>(ale_next_wrap)
 
 " Disabling highlighting

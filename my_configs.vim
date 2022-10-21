@@ -72,7 +72,7 @@ let g:Lf_WildIgnore = {
 " => Asyncrun
 " 自动打开 quickfix window ，高度为 6
 let g:asyncrun_open = 6
-map <leader>r :AsyncRun 
+nnoremap <leader>r :AsyncRun 
 
 "----------------------------------------------------------------------
 " <leader>+数字键 切换tab
