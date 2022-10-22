@@ -16,7 +16,7 @@
 后换成了`<Space>` 。不过`,` 确实比`<Space>` 要舒服一点，而且官方文档在介绍`mapleader` 
 的时候用的例子也是`,` 。
 
-[leader](http://learnvimscriptthehardway.stevelosh.com/chapters/06.html#leader)
+[mapleader](https://vimdoc.sourceforge.net/htmldoc/map.html#mapleader)
 
 ## 依赖
 
