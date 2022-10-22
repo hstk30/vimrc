@@ -30,7 +30,7 @@
 
 隐藏高亮的搜索结果:
 	
-	map <silent> <leader><cr> :noh<cr>
+	map <silent> <leader>/ :noh<cr>
 
 窗口跳转:
 	
@@ -39,15 +39,7 @@
 	map <C-h> <C-W>h
 	map <C-l> <C-W>l
 
-Closing of the current buffer(s) (`<leader>bd` and (`<leader>ba`)):
-	
-	" Close current buffer
-	map <leader>bd :Bclose<cr>
-	
-	" Close all buffers
-	map <leader>ba :1,1000 bd!<cr>
-	
-Useful mappings for managing tabs:
+`tab` 管理:
 	
 	map <leader>tn :tabnew<cr>
 	map <leader>to :tabonly<cr>
@@ -57,24 +49,8 @@ Useful mappings for managing tabs:
 	" Opens a new tab with the current buffer's path
 	" Super useful when editing files in the same directory
 	map <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
-	
-Switch [CWD](http://vim.wikia.com/wiki/Set_working_directory_to_the_current_file) to the directory of the open buffer:
-	
-	map <leader>cd :cd %:p:h<cr>:pwd<cr>
-	
-Open `ack.vim` for fast search:
-	
-	map <leader>g :Ack 
 
-Quickly open a buffer for scripbble:
-	
-	map <leader>q :e ~/buffer<cr>
-
-Toggle paste mode on and off:
-	
-	map <leader>pp :setlocal paste!<cr>
-
-switch between tab:
+`tab` 切换:
 
     noremap <silent><leader>1 1gt<cr>
     noremap <silent><leader>2 2gt<cr>
@@ -87,55 +63,35 @@ switch between tab:
     noremap <silent><leader>9 9gt<cr>
     noremap <silent><leader>0 10gt<cr>
 
-### Visual mode mappings
+`ack.vim` 类似`grep` :
+	
+	map <leader>g :Ack 
 
-Visual mode pressing `*` or `#` searches for the current selection:
+粘贴模式开关，防止从其他地方复制来的东西格式混乱:
+	
+	map <leader>pp :setlocal paste!<cr>
 
-	vnoremap <silent> * :call VisualSelection('f')<CR>
-	vnoremap <silent> # :call VisualSelection('b')<CR>
+### Visual mode 
 
-When you press gv you `Ack.vim` after the selected text:
+对选中的内容进行`ack`:
 
-	vnoremap <silent> gv :call VisualSelection('gv', '')<CR>
+    vnoremap <silent> gv :call VisualSelection('gv', '')<CR>
 
-When you press `<leader>r` you can search and replace the selected text:
+对选中内容进行全局替换:
 
-	vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
+    vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
 
-Surround the visual selection in parenthesis/brackets/etc.:
+### Insert mode
 
-    vnoremap $1 <esc>`>a)<esc>`<i(<esc>
-    vnoremap $2 <esc>`>a]<esc>`<i[<esc>
-    vnoremap $3 <esc>`>a}<esc>`<i{<esc>
-    vnoremap $$ <esc>`>a"<esc>`<i"<esc>
-    vnoremap $q <esc>`>a'<esc>`<i'<esc>
-    vnoremap $e <esc>`>a`<esc>`<i`<esc>
-
-
-### Insert mode mappings
-
-Quickly insert parenthesis/brackets/etc.:
-
-    inoremap $1 ()<esc>i
-    inoremap $2 []<esc>i
-    inoremap $3 {}<esc>i
-    inoremap $4 {<esc>o}<esc>O
-    inoremap $q ''<esc>i
-    inoremap $e ""<esc>i
-    inoremap $t <><esc>i
-
-Insert the current date and time (useful for timestamps):
+当前时间的缩写，快捷输入当前时间:
 
     iab xdate <C-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
 
 
 ### Command line mappings
 
-$q is super useful when browsing on the command line. It deletes everything until the last slash:
 
-    cno $q <C-\>eDeleteTillSlash()<cr>
-
-Bash like keys for the command line:
+类似`Bash` 上的快捷键:
 
     cnoremap <C-A>		<Home>
     cnoremap <C-E>		<End>
@@ -144,14 +100,9 @@ Bash like keys for the command line:
     cnoremap <C-P> <Up>
     cnoremap <C-N> <Down>
 
-Write the file as sudo (works only on Unix). Super useful when you open a file and you don't have permissions to save your changes. [Vim tip](http://vim.wikia.com/wiki/Su-write):
-
-    :W 
-
-
 ### Plugin related mappings
 
-[LeaderF](https://github.com/Yggdroot/LeaderF) to find file fastly:
+文件查找、切换 [LeaderF](https://github.com/Yggdroot/LeaderF) :
 
     let g:Lf_ShortcutF = "<leader>ff"
     noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
@@ -159,11 +110,11 @@ Write the file as sudo (works only on Unix). Super useful when you open a file a
     noremap <leader>ft :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
     noremap <leader>fl :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
 
-[asyncrun.vim](https://github.com/skywind3000/asyncrun.vim) to run Shell Command async:
+异步跑命令行[asyncrun.vim](https://github.com/skywind3000/asyncrun.vim) :
 
-    nnoremap <leader>r :AsyncRun 
+    nnoremap <leader>ar :AsyncRun 
 
-[YouCompleteMe](https://github.com/ycm-core/YouCompleteMe) to complete code and `GOTO`:
+代码补全、`GOTO` 功能[YouCompleteMe](https://github.com/ycm-core/YouCompleteMe) :
 
     nmap <leader>fw <Plug>(YCMFindSymbolInWorkspace)
     nmap <leader>fd <Plug>(YCMFindSymbolInDocument)
@@ -175,32 +126,25 @@ Write the file as sudo (works only on Unix). Super useful when you open a file a
     nnoremap <leader>jce :YcmCompleter GoToCallees<CR>
     nnoremap <leader>kd :YcmCompleter GetDoc<CR>
 
-[tagbar](https://github.com/preservim/tagbar) to toggle tag list:
+查看文件的`tag` 列表[tagbar](https://github.com/preservim/tagbar) :
 
     nmap <F8> :TagbarToggle<CR>
 
-[NERD Tree](https://github.com/preservim/nerdtree) mappings:
+项目文件树 [NERD Tree](https://github.com/preservim/nerdtree) :
 
     map <leader>nn :NERDTreeToggle<cr>
     map <leader>nb :NERDTreeFromBookmark 
     map <leader>nf :NERDTreeFind<cr>
 
-[vim-yankstack](https://github.com/maxbrunsfeld/vim-yankstack) mappings to manage the kill-ring (clipboard):
+括号、引号等的删除替换 [vim-surround](https://github.com/tpope/vim-surround)
 
-    nmap <C-p> <Plug>yankstack_substitute_older_paste
-    nmap <C-n> <Plug>yankstack_substitute_newer_paste
 
 [vim-snipmate](https://github.com/garbas/vim-snipmate) mappings to autocomplete via snippets:
 
     ino <C-j> <C-r>=snipMate#TriggerSnippet()<cr>
     snor <C-j> <esc>i<right><C-r>=snipMate#TriggerSnippet()<cr>
 
-[vim-surround](https://github.com/tpope/vim-surround) mappings to easily surround a string with `_()` gettext annotation:
-
-    vmap Si S(i_<esc>f)
-    au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
-
-[ale](https://github.com/dense-analysis/ale) to easily go to the next Ale syntax/lint error:
+代码动态检查[ale](https://github.com/dense-analysis/ale) :
 
     nmap <silent> <leader>a <Plug>(ale_next_wrap)
 
@@ -212,11 +156,12 @@ Write the file as sudo (works only on Unix). Super useful when you open a file a
     :IndentGuidesToggle
 
 [vim-fugitive](https://github.com/tpope/vim-fugitive) to copy the link to the line of a Git repository to the clipboard:
-
+ 
     nnoremap <leader>v :.GBrowse!<CR>
     xnoremap <leader>v :'<'>GBrowse!<CR>
 
 ### Spell checking
+
 Pressing `<leader>ss` will toggle spell checking:
 
     map <leader>ss :setlocal spell!<cr>
@@ -228,15 +173,8 @@ Shortcuts using `<leader>` instead of special characters:
     map <leader>sa zg
     map <leader>s? z=
 
-### Running Code
-To run code directly from vim, press `F5`. The currently open code will execute without you having to type anything.
-
-Can be used to execute code written in C, C++, Java, Python, Go, Octave, Bash scripts and HTML. To edit how you want your code to be executed, make changes in the file 
-```
-~/.vim_runtime/vimrcs/extended.vim
-```
-
 ### Cope
+
 Query `:help cope` if you are unsure what cope is. It's super useful!
 
 When you search with `Ack.vim`, display your results in cope by doing:

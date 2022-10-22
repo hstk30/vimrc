@@ -18,10 +18,7 @@ from os import path
 PLUGINS = """
 auto-pairs https://github.com/jiangmiao/auto-pairs
 ale https://github.com/dense-analysis/ale
-vim-yankstack https://github.com/maxbrunsfeld/vim-yankstack
 ack.vim https://github.com/mileszs/ack.vim
-bufexplorer https://github.com/jlanzarotta/bufexplorer
-ctrlp.vim https://github.com/ctrlpvim/ctrlp.vim
 mayansmoke https://github.com/vim-scripts/mayansmoke
 nerdtree https://github.com/preservim/nerdtree
 nginx.vim https://github.com/chr4/nginx.vim
@@ -38,11 +35,8 @@ vim-snipmate https://github.com/garbas/vim-snipmate
 vim-snippets https://github.com/honza/vim-snippets
 vim-surround https://github.com/tpope/vim-surround
 vim-expand-region https://github.com/terryma/vim-expand-region
-vim-multiple-cursors https://github.com/terryma/vim-multiple-cursors
 vim-fugitive https://github.com/tpope/vim-fugitive
 vim-rhubarb https://github.com/tpope/vim-rhubarb
-goyo.vim https://github.com/junegunn/goyo.vim
-vim-zenroom2 https://github.com/amix/vim-zenroom2
 vim-repeat https://github.com/tpope/vim-repeat
 vim-commentary https://github.com/tpope/vim-commentary
 vim-gitgutter https://github.com/airblade/vim-gitgutter
@@ -60,9 +54,7 @@ typescript-vim https://github.com/leafgarland/typescript-vim
 vim-javascript https://github.com/pangloss/vim-javascript
 vim-python-pep8-indent https://github.com/Vimjas/vim-python-pep8-indent
 vim-indent-guides https://github.com/nathanaelkane/vim-indent-guides
-mru.vim https://github.com/vim-scripts/mru.vim
 editorconfig-vim https://github.com/editorconfig/editorconfig-vim
-dracula https://github.com/dracula/vim
 """.strip()
 
 GITHUB_ZIP = "%s/archive/master.zip"
