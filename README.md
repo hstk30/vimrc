@@ -139,7 +139,8 @@
 括号、引号等的删除替换 [vim-surround](https://github.com/tpope/vim-surround)
 
 
-[vim-snipmate](https://github.com/garbas/vim-snipmate) mappings to autocomplete via snippets:
+[vim-snipmate](https://github.com/garbas/vim-snipmate) 和 [vim-snippets](https://github.com/honza/vim-snippets)
+片段补全，`keyword<C-j>` 就完事了:
 
     ino <C-j> <C-r>=snipMate#TriggerSnippet()<cr>
     snor <C-j> <esc>i<right><C-r>=snipMate#TriggerSnippet()<cr>
