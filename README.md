@@ -11,12 +11,11 @@
 
 # <leader>
 
-本来用的`leader` 是`,` ， 看了这个
-[vim-init issue22](https://github.com/skywind3000/vim-init/issues/22)
-后换成了`<Space>` 。不过`,` 确实比`<Space>` 要舒服一点，而且官方文档在介绍`mapleader` 
-的时候用的例子也是`,` 。
-
-[mapleader](https://vimdoc.sourceforge.net/htmldoc/map.html#mapleader)
+```
+" PracticalVim Tip 49
+let mapleader="," 
+noremap \ ,
+```
 
 ## 依赖
 
